@@ -26,8 +26,10 @@ var getDbEventStrings = function(num, marketMeta, db) {
 
 var getQueueOffset = function(events, marketMeta, db) {
 
-    // So can't assume that there's a field that identifies an event uniquely (or combination of fields) - but we do know that the queue is fixed length and old events pop off the end
-    // So how about pulling the event queue - storing it in an array - then checking that all events after a given index match the old event queue - then you have your new items
+    // So can't assume that there's a field that identifies an event uniquely (or combination of fields) - 
+    //      but we do know that the queue is fixed length and old events pop off the end
+    // So how about pulling the event queue - storing it in an array - then checking that all events after a given index match the old event queue - 
+    //      then you have your new items
 
     let oldEventsStrings = getDbEventStrings(events.length, marketMeta, db);
     let newEventStrings = events.map(e => JSON.stringify(e));

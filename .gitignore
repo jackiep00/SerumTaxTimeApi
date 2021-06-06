@@ -55,3 +55,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Environment variables
+.env
+package.json
